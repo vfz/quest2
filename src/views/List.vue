@@ -32,11 +32,11 @@
         <!--Генерация карточки с заявкой (итерацией массива с заявками)-->
         <!-- Фильтрация по номеру требует строго равенства -->
         <div class="col" v-for="task in allTasks" :key="task.id"  v-show="(SearchNum===task.id || !SearchNum) && (SearchOrg && searchOrg(task.NameOrg,SearchOrg) || !SearchOrg)">
-          <div class="card task-card position-relative"  v-on:click="task.info=!task.info">
+          <div class="card task-card position-relative"  v-on:click=" task.info=!task.info">
             <div class="card-body">
               <div class="card-check">
                 <input class="form-check-input task-check" type="checkbox" 
-                  v-on:click="task.Statuscheck=!task.Statuscheck"
+                  v-on:click.stop
                   v-show="task.info"
                   :checked="task.Statuscheck==1"
                   >

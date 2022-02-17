@@ -4,10 +4,10 @@
   <div class="col-md-6 offset-md-3 bg-info">
     <h2>Новая задача</h2>
        
-    <div class="alert alert-danger" role="alert" v-show="errorStatus">
+    <div class="alert alert-danger alert-dismissible" role="alert" v-show="errorStatus">
       Произошла ошибка: {{errorMessage}}
     </div>
-     <div class="alert alert-success" role="alert" v-show="successStatus">
+     <div class="alert alert-success alert-dismissible" role="alert" v-show="successStatus">
       Сообщение от сервера: {{successMessage}}
     </div>
 
@@ -128,6 +128,7 @@ export default {
           
           this.successMessage=(response.data[1]===null) ? "Данные внесены успешно": '';
           this.errorMessage=(response.data[1]===null) ? '': 'Произошла ошибка при записи в базу '+response.data;
+
           this.successStatus=(response.data[1]===null) ? true: false;
           this.errorStatus=(response.data[1]===null) ? false: true;
 
