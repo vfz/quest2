@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #e3f2fd;">
     <div class="container-fluid">
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,23 +7,33 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <router-link 
-                tag="li"
-                to="/new"
-                exact
-                class="nav-item"
-                active-class="active"
-                >
-            <a class="nav-link active" aria-current="page" href="#">Создать задачу</a>
-            </router-link>
-            <router-link 
-                tag="li"
+            
+            <li class="nav-item">
+            <router-link
+                tag="a"
                 to="/"
-                class="nav-item"
+                exact
+                class="nav-link"
                 active-class="active"
-                >
-            <a class="nav-link active" aria-current="page" href="#">Список задач</a>
+                aria-current="page"
+                href="#"
+            >
+                Список задач
             </router-link>
+            </li>
+            <li class="nav-item">
+            <router-link
+                tag="a"
+                to="/new"
+                class="nav-link"
+                active-class="active"
+                aria-current="page"
+                href="#"
+            >
+                Создать задачу
+            </router-link>
+            </li>
+            
         </ul>
         </div>
     </div>

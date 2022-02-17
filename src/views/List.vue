@@ -32,7 +32,7 @@
         <!--Генерация карточки с заявкой (итерацией массива с заявками)-->
         <!-- Фильтрация по номеру требует строго равенства -->
         <div class="col" v-for="task in allTasks" :key="task.id"  v-show="(SearchNum===task.id || !SearchNum) && (SearchOrg && searchOrg(task.NameOrg,SearchOrg) || !SearchOrg)">
-          <div class="card task-card"  v-on:click="task.info=!task.info">
+          <div class="card task-card position-relative"  v-on:click="task.info=!task.info">
             <div class="card-body">
               <div class="card-check">
                 <input class="form-check-input task-check" type="checkbox" 
@@ -45,7 +45,7 @@
               <span class="">{{task.summ}} руб.</span>
 
               <div class="card-client-name">{{task.NameOrg}}</div>
-              <span class="card-client-inn">{{task.innOrg}}</span>
+              <span class="card-client-inn">ИНН {{task.innOrg}}</span>
             </div>
             <div class=""  v-show="task.info">
               <div class="task-status">
@@ -71,7 +71,6 @@
 .task-card
   border-radius: .45rem;
   box-shadow: .1rem .1rem #f4f5f7;
-  position: relative;
   cursor: pointer;
 
 .task-card:hover 
@@ -146,15 +145,6 @@ export default {
   },
   async mounted(){
     this.getTasks(this.lim);
-  },
-
-
-  
-
-
-
-  components: {
-    
   }
 }
 </script>

@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
-    <!-- <Navbar/> -->
-    <!-- <div class="container-fluid"> -->
-    <router-view/>
-    <!-- </div> -->
+  <div  id="app">
+    <Navbar/>
+    <div class="container-fluid">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -11,7 +11,10 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "src/assets/variables.scss";
 
-body {
+</style>
+<style scoped>
+
+.container-fluid {
     padding: 1rem;
 }
 
